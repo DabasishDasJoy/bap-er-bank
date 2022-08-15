@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ----------------------------Tailwind CDN------------------------------------- -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ----------------------------Tailwind CDN------------------------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl font-normal text-center mt-10">Let's get some <span
+                class="font-semibold text-blue-600">Mooooooooooney</span>!!!</h1>
+    </header>
+    <main>
+        <section class="mt-10">
+            <div class="grid grid-cols-3 gap-10 text-white w-2/3 mx-auto">
+                <div class="bg-lime-500 rounded-xl p-5 text-center">
+                    <h1 class="text-2xl font-normal">Deposit</h1>
+                    <h2 class="text-5xl font-semibold">$<span id="deposit-amount">00</span></h2>
+                </div>
+                <div class="bg-yellow-400 rounded-xl p-5 text-center">
+                    <h1 class="text-2xl font-normal">Withdraw</h1>
+                    <h2 class="text-5xl font-semibold">$<span id="withdraw-amount">00</span></h2>
+                </div>
+                <div class="bg-sky-500 rounded-xl p-5 text-center">
+                    <h1 class="text-2xl font-normal">Balance</h1>
+                    <h2 class="text-5xl font-semibold">$<span id="ac-balance">1250</span> </h2>
+                </div>
+            </div>
+        </section>
+        <section class="mt-10">
+            <div class="grid grid-cols-2 gap-10 w-2/3 mx-auto">
+                <div class="bg-rose-500 rounded-xl p-5">
+                    <h1 class="text-2xl font-normal mb-5 text-white">Please Deposit</h1>
+                    <input class="block w-2/3 mb-5 px-2 py-0.5 border-2 rounded-md border-gray-300" type="number"
+                        id="deposit-field" placeholder="$ amount you want to deposit.">
+                    <button class="text-xl bg-blue-500 px-5 py-1 rounded-md text-white font-semibold hover:bg-sky-700"
+                        id="btn-deposit">Deposit</button>
+                </div>
+                <div class="bg-purple-400 rounded-xl p-5">
+                    <h1 class="text-2xl font-normal mb-5 text-white">Please Withdraw</h1>
+                    <input class="block w-2/3 mb-5 px-2 py-0.5 border-2 rounded-md border-gray-300" type="number"
+                        id="withdraw-field" placeholder="$ amount you want to withdraw.">
+                    <button class="text-xl bg-red-600 px-5 py-1 rounded-md text-white font-semibold hover:bg-sky-700"
+                        id="btn-withdraw">Withdraw</button>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------Error Modal------------- -->
+
+
+        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+            id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+            role="dialog">
+            <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+                <div
+                    class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                    <div
+                        class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
+                            Modal title
+                        </h5>
+                        <button type="button"
+                            class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body relative p-4">
+                        <p>This is a vertically centered modal.</p>
+                    </div>
+                    <div
+                        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                        <button type="button"
+                            class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                            data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button"
+                            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -------------------Error Modal------------- -->
+    </main>
+
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+
+</html>
