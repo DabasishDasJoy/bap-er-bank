@@ -18,8 +18,9 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
         
     }
     else{
-        document.getElementById('btn-deposit').setAttribute('data-bs-toggle', 'modal');
-        document.getElementById('btn-deposit').setAttribute('data-bs-target', "#exampleModalCenter");
+        // document.getElementById('btn-deposit').setAttribute('data-bs-toggle', 'modal');
+        // document.getElementById('btn-deposit').setAttribute('data-bs-target', "#exampleModalCenter");
+        
         alert('Invalid');
     }
     

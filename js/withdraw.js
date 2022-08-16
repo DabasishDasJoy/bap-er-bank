@@ -15,6 +15,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
         balanceAmoutElement.innerText = currentBalanceAmountValue - newWithdrawAmountValue;
     }
     else if(isNaN(newWithdrawAmountValue)){
+        
         alert('Invalid input');
     }
     else{
